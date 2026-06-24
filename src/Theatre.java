@@ -1,3 +1,11 @@
+import theatre.model.people.Gender;
+import theatre.model.show.MusicalShow;
+import theatre.model.show.Opera;
+import theatre.model.show.Show;
+import theatre.model.people.Actor;
+import theatre.model.show.Ballet;
+import theatre.model.people.Director;
+
 import java.util.Scanner;
 
 public class Theatre {
@@ -26,17 +34,17 @@ public class Theatre {
             System.out.print("Выберите действие: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Очистка буфера после nextInt()
+            scanner.nextLine();
 
             if (choice == 0) {
                 System.out.println("Программа завершена. До свидания!");
                 break;
             }
 
-            // Переменная для выбранного спектакля
+
             Show selectedShow = null;
 
-            // Если выбрано действие от 1 до 4, сначала даем пользователю выбрать спектакль
+
             if (choice >= 1 && choice <= 4) {
                 System.out.println("\nВыберите спектакль:");
                 System.out.println("1. Драма \"Гамлет\"");
@@ -44,7 +52,7 @@ public class Theatre {
                 System.out.println("3. Балет \"Лебединое озеро\"");
                 System.out.print("Ваш выбор: ");
                 int showChoice = scanner.nextInt();
-                scanner.nextLine(); // Очистка буфера
+                scanner.nextLine();
 
                 switch (showChoice) {
                     case 1:
@@ -58,13 +66,13 @@ public class Theatre {
                         break;
                     default:
                         System.out.println("Неверный выбор спектакля!");
-                        continue; // Возврат в начало главного цикла
+                        continue;
                 }
             }
 
-            // Обработка действий меню
+
             switch (choice) {
-                case 1: // Добавить актера
+                case 1:
                     System.out.print("Введите имя актера: ");
                     String name = scanner.nextLine();
                     System.out.print("Введите фамилию актера: ");
@@ -76,13 +84,13 @@ public class Theatre {
 
                     System.out.print("Введите рост актера (см): ");
                     int height = scanner.nextInt();
-                    scanner.nextLine(); // Очистка буфера
+                    scanner.nextLine();
 
                     Actor newActor = new Actor(name, surname, gender, height);
                     selectedShow.addActor(newActor);
                     break;
 
-                case 2: // Заменить актера
+                case 2:
                     System.out.print("Введите ФАМИЛИЮ актера, которого нужно заменить: ");
                     String oldSurname = scanner.nextLine();
 
@@ -96,19 +104,19 @@ public class Theatre {
                     Gender newGender = (newGenderChoice == 2) ? Gender.FEMALE : Gender.MALE;
                     System.out.print("Рост нового актера (см): ");
                     int newHeight = scanner.nextInt();
-                    scanner.nextLine(); // Очистка буфера
+                    scanner.nextLine();
 
                     Actor replacementActor = new Actor(newName, newSurname, newGender, newHeight);
                     selectedShow.replaceActor(replacementActor, oldSurname);
                     break;
 
-                case 3: // Показать список актеров
+                case 3:
                     selectedShow.printActors();
                     break;
 
-                case 4: // Показать либретто
+                case 4:
                     if (selectedShow instanceof MusicalShow) {
-                        // Приведение типов (Downcasting), так как метод printLibretto() есть только у MusicalShow
+
                         ((MusicalShow) selectedShow).printLibretto();
                     } else {
                         System.out.println("У драматического спектакля \"" + selectedShow.getTitle() + "\" нет либретто!");

@@ -1,3 +1,5 @@
+package theatre.model.people;
+
 import java.util.Objects;
 
 public class Actor extends Person {

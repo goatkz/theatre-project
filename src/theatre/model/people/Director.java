@@ -1,3 +1,5 @@
+package theatre.model.people;
+
 public class Director extends Person {
     private int numberOfShows;
 

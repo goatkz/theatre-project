@@ -1,3 +1,7 @@
+package theatre.model.show;
+
+import theatre.model.people.Director;
+
 public class Ballet extends MusicalShow {
     private String choreographer;
 

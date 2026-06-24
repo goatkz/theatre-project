@@ -1,3 +1,8 @@
+package theatre.model.show;
+
+import theatre.model.people.Actor;
+import theatre.model.people.Director;
+
 import java.util.ArrayList;
 import java.util.List;
 

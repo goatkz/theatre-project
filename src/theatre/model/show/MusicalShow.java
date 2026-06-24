@@ -1,3 +1,7 @@
+package theatre.model.show;
+
+import theatre.model.people.Director;
+
 public class MusicalShow extends Show {
     private String musicAuthor;
     private String librettoText;

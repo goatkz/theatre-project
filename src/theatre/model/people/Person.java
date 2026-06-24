@@ -1,4 +1,4 @@
-import java.util.Objects;
+package theatre.model.people;
 
 // Базовый класс для всех людей в театре
 public abstract class Person {

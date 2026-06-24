@@ -1,3 +1,7 @@
+package theatre.model.show;
+
+import theatre.model.people.Director;
+
 public class Opera extends MusicalShow {
     private int choirSize;
 
