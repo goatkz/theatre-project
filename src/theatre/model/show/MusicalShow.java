@@ -3,6 +3,7 @@ package theatre.model.show;
 import theatre.model.people.Director;
 
 public class MusicalShow extends Show {
+
     private String musicAuthor;
     private String librettoText;
 
@@ -13,7 +14,7 @@ public class MusicalShow extends Show {
     }
 
     public void printLibretto() {
-        System.out.println("--- Либретто к музыкальному спектаклю \"" + getTitle() + "\" (Автор музыки: " + musicAuthor + ") ---");
+        System.out.println(String.format(" Либретто к музыкальному спектаклю \"%s\" (Автор музыки: %s) ", getTitle(), musicAuthor));
         System.out.println(librettoText);
     }
 }
